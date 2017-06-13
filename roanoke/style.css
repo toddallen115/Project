@@ -1,0 +1,59 @@
+.board{
+  width:500px;
+  height:500px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+}
+
+.tile{
+  width:23px;
+  height:23px;
+  margin:1px;
+}
+
+.highlighted{
+  border:1px;
+  border-color: yellow;
+  border-style: solid;
+}
+
+.display{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-footer{
+  display: flex;
+  flex-direction: column;
+  padding:15px 15px;
+  margin:10px;
+}
+
+.water{
+  background-color: blue;
+}
+
+.tree{
+  background-color: DarkGreen;
+}
+
+.grass{
+  background-color: green;
+}
+
+.mountain{
+  background-color: grey;
+}

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+
+    <script
+  src='https://code.jquery.com/jquery-3.2.1.js'
+  integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE='
+  crossorigin='anonymous'></script>
+  <script
+src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'
+integrity='sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30='
+crossorigin='anonymous'></script>
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
+
+
+     <!-- <link rel='stylesheet' href='../../lib/bootstrap/css/bootstrap.min.css'>
+    <script src='../../lib/bootstrap/js/bootstrap.min.js'></script> -->
+
+    <link rel='stylesheet' href='style.css' type='text/css'>
+  </head>
+
+  <body>
+
+    <div class='modal fade' id='build-form'>
+      <div class='modal-dialog modal-lg'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h2>Develop Land</h2>
+          </div>
+          <div class='modal-body'>
+            <div class='register-form-input'>
+            <a><input type='text' class='form-control' id='firstname' placeholder='First name'></a>
+            <a><input type='text' class='form-control' id='lastname' placeholder='Last name'></a>
+            <a><input type='email' class='form-control' id='email' placeholder='Email'></a>
+            <a><input type='text' class='form-control' id='password' placeholder='Password'></a>
+          </div>
+          </div>
+          <div class='modal-footer'>
+          <button type='button' class='btn btn-primary' id='build-save'>
+            Build it!
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!--.modal-->
+
+
+
+
+    <div class="header">
+      <h1>Roanoke</h1>
+      <h2>The lost colony</h2>
+    </div>
+    <div class='display'>
+      <div class='sidebar'>
+        <ul>
+          <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+        </ul>
+        <div class='sidebar-footer'>
+          <button id='build' type='button' data-toggle='modal' data-target='#build-form'>Build</button>
+          <button id='end-turn'>End turn</button>
+        </div>
+      </div>
+
+
+    <div class='board'>
+      <div class='row one tree'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row two tree'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row three tree'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row four tree'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row five grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row six grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row seven grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row eight grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row nine grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row ten grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row eleven grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row twelve grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row thirteen grass'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row fourteen mountain'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row fifteen mountain'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row sixteen mountain'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row seventeen water'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row eighteen water'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row nineteen water'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+      <div class='row twenty water'>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+        <div class='tile undeveloped'>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script>
+    <script src='script.js'></script>
+  </body>
+
+
+
+</html>
